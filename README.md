@@ -1,5 +1,5 @@
 # react-native-introduction
-Sample react-native demo application.
+Sample React Native (Expo) demo application.
 
 ## About this Repo
 This React Native demo application is built with Expo. It is meant to be a fairly bare example project to introduce people to React Native with examples of basic functionality to get people off the ground. It provides a foundation of user interaction state management and base navigation to let developers start playing with the framework and experiment/explore/add on at the developers' desired pace.
