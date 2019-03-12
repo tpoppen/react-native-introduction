@@ -34,9 +34,7 @@ const SampleBottomTabNavigator = createBottomTabNavigator({
 const RootLevelNavigation = createSwitchNavigator({
     [ROOT_SWITCH_ROUTES.SplashScreen]: { screen: SplashScreen },
     [ROOT_SWITCH_ROUTES.LoginScreen]: { screen: LoginScreen },
-    [ROOT_SWITCH_ROUTES.HomeScreen]: { screen: HomeScreen },
-}, {
-    initialRouteName: ROOT_SWITCH_ROUTES.SplashScreen
+    [ROOT_SWITCH_ROUTES.HomeScreen]: { screen: SampleBottomTabNavigator },
 });
 
 export default createAppContainer(RootLevelNavigation);

@@ -9,7 +9,6 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
         <RootNavigator />
       </View>
     );
