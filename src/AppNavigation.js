@@ -2,7 +2,7 @@
 import { createAppContainer, createSwitchNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
 // local imports
-import { ROOT_SWITCH_ROUTES, TAB_ROUTES, STACK_ROUTES } from './AppNavigationConstants';
+import { ROOT_SWITCH_ROUTES, TAB_ROUTES, HOME_STACK_ROUTES, STATE_STACK_ROUTES, NEST_STACK_ROUTES } from './AppNavigationConstants';
 import {
     HomeScreen,
     LoginScreen,
@@ -11,21 +11,23 @@ import {
     StateManagementExampleScreen,
 } from './screens';
 
-const SampleStackNavigator = createStackNavigator({
-    [STACK_ROUTES.SampleStackView]: { screen: StackNavExampleScreen },
+const HomeStack = createStackNavigator({
+    [HOME_STACK_ROUTES.Home]: HomeScreen,
+});
+
+const StateStack = createStackNavigator({
+    [STATE_STACK_ROUTES.State]: StateManagementExampleScreen,
+});
+
+const NestedStack = createStackNavigator({
+    [NEST_STACK_ROUTES.NestStack]: { screen: StackNavExampleScreen },
 });
 
 const SampleBottomTabNavigator = createBottomTabNavigator({
-    [TAB_ROUTES.Home]: {
-        screen: HomeScreen,
-    },
-    [TAB_ROUTES.StateExample]: {
-        screen: StateManagementExampleScreen
-    },
-    [TAB_ROUTES.StackExample]: {
-        screen: SampleStackNavigator
-    },
-}, { initialRouteName: TAB_ROUTES.Home });
+    [TAB_ROUTES.Home]: { screen: HomeStack },
+    [TAB_ROUTES.StateExample]: { screen: StateStack },
+    [TAB_ROUTES.StackExample]: { screen: NestedStack },
+});
 
 const RootLevelNavigation = createSwitchNavigator({
     [ROOT_SWITCH_ROUTES.SplashScreen]: { screen: SplashScreen },

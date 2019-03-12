@@ -30,7 +30,7 @@ class Login extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'grey', justifyContent: "center" }}>
+            <View style={{ flex: 1, justifyContent: "center" }}>
                 <Text>Username</Text>
                 <TextInput onChangeText={this.usernameChanged} />
                 <Text>Password</Text>

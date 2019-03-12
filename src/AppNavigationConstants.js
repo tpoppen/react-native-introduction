@@ -6,13 +6,21 @@ const ROOT_SWITCH_ROUTES = {
 }
 
 const TAB_ROUTES = {
+    Home: 'HOME_STACK',
+    StateExample: 'STATE_STACK',
+    StackExample: 'NEST_STACK',
+}
+
+const HOME_STACK_ROUTES = {
     Home: 'HOME',
-    StateExample: 'STATE_EXAMPLE',
-    StackExample: 'STACK_ROOT',
 }
 
-const STACK_ROUTES = {
-    SampleStackView: 'STACK_VIEW'
+const STATE_STACK_ROUTES = {
+    State: 'STATE',
 }
 
-export { ROOT_SWITCH_ROUTES, TAB_ROUTES, STACK_ROUTES };
+const NEST_STACK_ROUTES = {
+    NestStack: 'STACK_VIEW'
+}
+
+export { ROOT_SWITCH_ROUTES, TAB_ROUTES, HOME_STACK_ROUTES, STATE_STACK_ROUTES, NEST_STACK_ROUTES };

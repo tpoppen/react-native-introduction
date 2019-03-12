@@ -4,7 +4,7 @@ import { Button, Text, View } from 'react-native';
 import { StackActions } from 'react-navigation';
 
 // local imports
-import { STACK_ROUTES } from '../AppNavigationConstants';
+import { NEST_STACK_ROUTES } from '../AppNavigationConstants';
 
 class StackNavExample extends Component {
     static navigationOptions = {
@@ -12,7 +12,6 @@ class StackNavExample extends Component {
     };
 
     getStackLevel = () => {
-        console.log('TESTING TESTING TESTING')
         if (this.props.navigation.state && this.props.navigation.state.params) {
             return this.props.navigation.state.params.stackLevel || 0;
         }
@@ -22,17 +21,16 @@ class StackNavExample extends Component {
 
     navigatePressed = () => {
         const pushAction = StackActions.push({
-            routeName: STACK_ROUTES.SampleStackView,
+            routeName: NEST_STACK_ROUTES.NestStack,
             params: { stackLevel: this.getStackLevel() + 1 },
           });
         this.props.navigation.dispatch(pushAction);
     }
 
     render() {
-        console.log('testing render stack')
         return (
-            <View style={{ flex: 1 }}>
-                <Text>This is stack level {this.getStackLevel()}!</Text>
+            <View style={{ flex: 1, papdding: 8 }}>
+                <Text style={{ textAlign: 'center' }}>This is stack level {this.getStackLevel()}!</Text>
                 <Button title="Go Deeper" onPress={this.navigatePressed} />
             </View>
         );

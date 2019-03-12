@@ -26,24 +26,27 @@ class StateManagementExample extends Component {
     }
 
     render() {
-        console.log('testing render state');
         const { textInput, pickerValue, toggleState } = this.state;
         return (
             <View style={{ flex: 1, justifyContent: 'center' }}>
-                <Text>Sample Text Input</Text>
+                <Text style={styles.label}>Sample Text Input</Text>
                 <TextInput value={textInput} />
-                <Text>Sample Picker</Text>
+                <Text style={styles.label}>Sample Picker</Text>
                 <Picker selectedValue={pickerValue}>
                     {this.getPickerValues()}
                 </Picker>
-                <Text>Sample Switch</Text>
-                <View style={{ flexDirection: "row" }}>
-                    <Text>Swith Label</Text>
+                <Text style={styles.label}>Sample Switch</Text>
+                <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text>Swith Label:</Text>
                     <Switch value={toggleState} />
                 </View>
             </View>
         )
     }
+}
+
+const styles = {
+    label: { marginBottom: 2, fontSize: 24 }
 }
 
 export default StateManagementExample;

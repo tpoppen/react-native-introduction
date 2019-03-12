@@ -8,11 +8,9 @@ class Home extends Component {
     };
 
     render() {
-        console.log('testing render');
         return (
-            <View style={{ flex: 1, backgroundColor: 'grey', justifyContent: 'center' }}>
-                <Text>Home page!</Text>
-                {console.log('test in render')}
+            <View style={{ flex: 1, padding: 8, justifyContent: 'center' }}>
+                <Text style={{ textAlign: 'center' }}>Home page!</Text>
             </View>
         );
     }
