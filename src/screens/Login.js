@@ -30,15 +30,23 @@ class Login extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: "center" }}>
-                <Text>Username</Text>
-                <TextInput onChangeText={this.usernameChanged} />
-                <Text>Password</Text>
-                <TextInput secureTextEntry onChangeText={this.passwordChanged} />
-                <Button title="Login" onPress={this.loginPressed} />
+            <View style={styles.contentWrapper}>
+                <View style={styles.contentAlignment}>
+                    <Text>Username</Text>
+                    <TextInput style={styles.input} onChangeText={this.usernameChanged} />
+                    <Text>Password</Text>
+                    <TextInput secureTextEntry style={styles.input} onChangeText={this.passwordChanged} />
+                    <Button title="Login" onPress={this.loginPressed} />
+                </View>
             </View>
         );
     }
+}
+
+const styles = {
+    contentWrapper: { flex: 1, justifyContent: "center", alignItems: 'center' },
+    contentAlignment: { width: '50%' },
+    input: { borderWidth: 1, borderColor: 'black' },
 }
 
 export default Login;

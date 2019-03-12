@@ -12,7 +12,7 @@ class StateManagementExample extends Component {
 
         this.state = {
             textInput: '',
-            pickerValue: undefined,
+            pickerValue: 'Swift',
             toggleState: false,
         }
     }
@@ -33,15 +33,15 @@ class StateManagementExample extends Component {
     render() {
         const { textInput, pickerValue, toggleState } = this.state;
         return (
-            <View style={{ flex: 1, justifyContent: 'center', padding: 8 }}>
+            <View style={styles.contentWrapper}>
                 <Text style={styles.label}>Sample Text Input</Text>
-                <TextInput value={textInput} onChangeText={this.onTextInputChange} />
+                <TextInput value={textInput} style={styles.textInput} onChangeText={this.onTextInputChange} />
                 <Text style={styles.label}>Sample Picker</Text>
                 <Picker selectedValue={pickerValue} onValueChange={this.onPickerValueChange}>
                     {this.getPickerValues()}
                 </Picker>
                 <Text style={styles.label}>Sample Switch</Text>
-                <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' }}>
+                <View style={styles.switchWrapper}>
                     <Text>Swith Label:</Text>
                     <Switch value={toggleState} onValueChange={this.onSwitchValueChange} />
                 </View>
@@ -51,7 +51,10 @@ class StateManagementExample extends Component {
 }
 
 const styles = {
-    label: { marginBottom: 2, fontSize: 24 }
+    contentWrapper: { flex: 1, justifyContent: 'center', padding: 8 },
+    label: { marginBottom: 2, fontSize: 24 },
+    textInput: { borderWidth: 1, borderColor: 'black' },
+    switchWrapper: { flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' },
 }
 
 export default StateManagementExample;
