@@ -2,10 +2,11 @@
 import React, { Component } from 'react';
 import { Picker, Switch, Text, TextInput, View } from 'react-native';
 
-// local imports
-
-
 class StateManagementExample extends Component {
+    static navigationOptions = {
+        title: 'State',
+    };
+
     constructor(props) {
         super(props);
 
@@ -25,9 +26,10 @@ class StateManagementExample extends Component {
     }
 
     render() {
+        console.log('testing render state');
         const { textInput, pickerValue, toggleState } = this.state;
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, justifyContent: 'center' }}>
                 <Text>Sample Text Input</Text>
                 <TextInput value={textInput} />
                 <Text>Sample Picker</Text>

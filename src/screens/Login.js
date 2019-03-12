@@ -25,7 +25,7 @@ class Login extends Component {
         // then redirect to your home screen
         const { username, password } = this.state;
         console.log('Username & Password at time of Login Press', username, password);
-        this.props.navigation.navigate(ROOT_SWITCH_ROUTES.HomeScreen);
+        this.props.navigation.navigate(ROOT_SWITCH_ROUTES.BaseTabNav);
     }
 
     render() {

@@ -8,13 +8,11 @@ import {
     LoginScreen,
     SplashScreen,
     StackNavExampleScreen,
-    StateManagementExampleScreen
+    StateManagementExampleScreen,
 } from './screens';
 
 const SampleStackNavigator = createStackNavigator({
     [STACK_ROUTES.SampleStackView]: { screen: StackNavExampleScreen },
-}, {
-    initialRouteKey: STACK_ROUTES.SampleStackView,
 });
 
 const SampleBottomTabNavigator = createBottomTabNavigator({
@@ -27,14 +25,12 @@ const SampleBottomTabNavigator = createBottomTabNavigator({
     [TAB_ROUTES.StackExample]: {
         screen: SampleStackNavigator
     },
-}, {
-    initialRouteName: TAB_ROUTES.HomeScreen,
-});
+}, { initialRouteName: TAB_ROUTES.Home });
 
 const RootLevelNavigation = createSwitchNavigator({
     [ROOT_SWITCH_ROUTES.SplashScreen]: { screen: SplashScreen },
     [ROOT_SWITCH_ROUTES.LoginScreen]: { screen: LoginScreen },
-    [ROOT_SWITCH_ROUTES.HomeScreen]: { screen: SampleBottomTabNavigator },
+    [ROOT_SWITCH_ROUTES.BaseTabNav]: { screen: SampleBottomTabNavigator },
 });
 
 export default createAppContainer(RootLevelNavigation);
