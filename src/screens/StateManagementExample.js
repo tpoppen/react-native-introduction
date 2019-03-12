@@ -17,6 +17,11 @@ class StateManagementExample extends Component {
         }
     }
 
+    // action handlers
+    onTextInputChange = (newText) => this.setState({ textInput: newText });
+    onPickerValueChange = (newVal) => this.setState({ pickerValue: newVal });
+    onSwitchValueChange = (newVal) => this.setState({ toggleState: newVal });
+
     // render helpers
     getPickerValues = () => {
         const pickerVals = ['JavaScript', 'Kotlin', 'Swift'];
@@ -28,17 +33,17 @@ class StateManagementExample extends Component {
     render() {
         const { textInput, pickerValue, toggleState } = this.state;
         return (
-            <View style={{ flex: 1, justifyContent: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'center', padding: 8 }}>
                 <Text style={styles.label}>Sample Text Input</Text>
-                <TextInput value={textInput} />
+                <TextInput value={textInput} onChangeText={this.onTextInputChange} />
                 <Text style={styles.label}>Sample Picker</Text>
-                <Picker selectedValue={pickerValue}>
+                <Picker selectedValue={pickerValue} onValueChange={this.onPickerValueChange}>
                     {this.getPickerValues()}
                 </Picker>
                 <Text style={styles.label}>Sample Switch</Text>
                 <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' }}>
                     <Text>Swith Label:</Text>
-                    <Switch value={toggleState} />
+                    <Switch value={toggleState} onValueChange={this.onSwitchValueChange} />
                 </View>
             </View>
         )
